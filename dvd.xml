@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbols>
+	<!-- Symbols in the DVD library (found from RMCP) -->
+    <symbol name="DVDConvertPathToEntrynum" size="0x308" offset="0x1A0" >
+        <data>
+            88780000 1C1D000C 810D9A40 7D3AC050
+        </data>
+    </symbol>
+    <symbol name="DVDFastOpen" size="0x68" offset="0x34" >
+        <data>
+            80AD9A9C 80C30004 38000000 38600001
+        </data>
+    </symbol>
+    <symbol name="DVDOpen" size="0x2AC" offset="0x244" >
+        <data>
+            1CC3000C 806D9A40 7C03302E 5400000F
+        </data>
+    </symbol>
+    <symbol name="DVDClose" size="0x24" offset="0x4" >
+        <data>
+            7C0802A6 90010014 48004A79 80010014
+        </data>
+    </symbol>
+    <symbol name="DVDReadPrio" size="0x128" offset="0x24" >
+        <data>
+            7CDF3378 7CFE3B78 41800010 80030034
+        </data>
+    </symbol>
+</symbols>

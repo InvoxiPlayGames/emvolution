@@ -37,6 +37,7 @@ static bool MyDVDOpen(const char* path, DVDFileInfo* fileInfo) {
             printf("SDOpen %s\n", replacements[realentry][1]);
             static FILE_STRUCT fs;
             fdlookup[realentry] = SD_open(&fs, replacements[realentry][1], O_RDONLY);
+            if (fdlookup[realentry] == -1) return DVDOpen(path, fileInfo); //fall back to the DVD if SD_open fails
             fileInfo->start = 0xFFFF0000 + (realentry);
             fileInfo->filesize = fs.filesize;
             return true;
@@ -68,6 +69,7 @@ static bool MyDVDFastOpen(int32_t entrynum, DVDFileInfo* fileInfo) {
         printf("SDFastOpen %s\n", replacements[realentry][1]);
         static FILE_STRUCT fs;
         fdlookup[realentry] = SD_open(&fs, replacements[realentry][1], O_RDONLY);
+        if (fdlookup[realentry] == -1) return false;//we don't have the original path/entrynum, so return false
         fileInfo->start = 0xFFFF0000 + (realentry);
         fileInfo->filesize = fs.filesize;
         return true;
